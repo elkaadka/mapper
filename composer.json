@@ -1,0 +1,31 @@
+{
+    "name": "kanel/mapper",
+    "description": "Simply map JSON structures onto PHP classes Edit",
+    "minimum-stability": "dev",
+    "require" : {
+        "php" : ">=7.0"
+    },
+    "repositories" : [ {
+        "type" : "composer",
+        "url" : "https://packagist.org/"
+    } ],
+    "require-dev" : {
+        "phpunit/phpunit" : "6.0.8",
+        "kanel/timer": "1.0.0"
+    },
+    "autoload-dev" : {
+        "psr-4" : {
+            "Kanel\\Mapper\\" : "src/",
+            "Kanel\\Mapper\\Tests\\" : "tests/"
+        }
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Kanel\\Mapper\\" : "src/"
+        }
+    },
+    "authors" : [ {
+        "name" : "Adil El Kanabi",
+        "email" : "adil.kanabi@gmail.com"
+    } ]
+}
