@@ -18,7 +18,7 @@ class Options
      * returns the value for createNewProperty
      * @return boolean
      */
-    public function isCreateNewProperty(): bool
+    public function isCreateNewProperty()
     {
         return $this->createNewProperty;
     }
@@ -28,7 +28,7 @@ class Options
      * @param bool $createNewProperty
      * @return Options
      */
-    public function createNewProperty(bool $createNewProperty): Options
+    public function createNewProperty($createNewProperty)
     {
         $this->createNewProperty = $createNewProperty;
 
@@ -49,9 +49,9 @@ class Options
      * @param string $property
      * @return null
      */
-    public function getPropertyTransformer(string $property)
+    public function getPropertyTransformer($property)
     {
-        return $this->propertyTransformers[$property]?? null;
+        return isset($this->propertyTransformers[$property])? $this->propertyTransformers[$property] :  null;
     }
 
     /**
@@ -60,7 +60,7 @@ class Options
      * @param TransformerInterface $transformer
      * @return Options
      */
-    public function addPropertyTransformer(string $property, TransformerInterface $transformer): Options
+    public function addPropertyTransformer($property, TransformerInterface $transformer)
     {
         $this->propertyTransformers[$property] = $transformer;
 
@@ -81,7 +81,7 @@ class Options
      * @param TransformerInterface $transformer
      * @return Options
      */
-    public function setTransformer(TransformerInterface $transformer): Options
+    public function setTransformer(TransformerInterface $transformer)
     {
         $this->transformer = $transformer;
 

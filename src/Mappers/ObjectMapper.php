@@ -39,7 +39,7 @@ class ObjectMapper extends AbstractMapper
      * @param $data
      * @return bool
      */
-    public function isValid($data): bool
+    public function isValid($data)
     {
         return is_object($data);
     }

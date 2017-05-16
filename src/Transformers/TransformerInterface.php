@@ -8,7 +8,7 @@ namespace Kanel\Mapper\Transformers;
  */
 interface TransformerInterface
 {
-    public function transform(string $attribute);
+    public function transform($attribute);
 
     public function getTransformer();
 }

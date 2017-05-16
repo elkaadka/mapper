@@ -13,7 +13,7 @@ class CustomTransformer extends AbstractTransformer
      * @param callable $transformer
      * @return TransformerInterface
      */
-    public function setTransformer(callable $transformer): TransformerInterface
+    public function setTransformer(callable $transformer)
     {
         $this->transformer = $transformer;
 

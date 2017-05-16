@@ -21,7 +21,7 @@ class CamelCaseTransformer extends AbstractTransformer
     public function __construct()
     {
         //create the transformer as a closure
-        $this->transformer = function(string $string): string {
+        $this->transformer = function($string) {
             if (strpos($string, '_') !== false || strpos($string, '-') !== false || strpos($string, ' ') !== false) {
                 return lcfirst(str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', strtolower($string)))));
             } else {
