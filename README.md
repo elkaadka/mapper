@@ -8,8 +8,29 @@ Simply map JSON structures onto PHP classes
 
  - Map an array, an object or a json string into an object :
      ```
+         $data = ['testOne' => 1, 'testTwo' => 2, 'testThree' => 3]
+         $myClass = new MyClass(); 
          $mapper = new Mapper();
-         $mapper->map($from, $myClass);
+         $mapper->map($data, $myClass);
+         print_r($myClass);
+         
+         Where MyClass is: 
+         
+         class MyClass {
+            protected $testOne;
+            public $testTwo;
+            private $testThree;
+         }
+         
+         The result is :
+         
+         Object
+         (
+             [testOne] => 1
+             [testTwo] => 2
+             [testThree] => 3
+         )
+
       ```
       
       - the first parameter ($from) can be either an array, an object or a string
