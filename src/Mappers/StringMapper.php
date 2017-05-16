@@ -37,7 +37,7 @@ class StringMapper extends AbstractMapper
      * @param $string
      * @return bool
      */
-    public function isValid($string)
+    public function isValid($string): bool
     {
         return is_string($string) && json_decode($string) && json_last_error() === JSON_ERROR_NONE;
     }

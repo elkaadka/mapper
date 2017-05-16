@@ -29,9 +29,9 @@ abstract class AbstractMapper implements MapperInterface
      * @param $propertyValue the value to copy
      * @param $class the class to copy into
      */
-    public function copy($propertyName, $propertyValue, $class)
+    public function copy(string $propertyName, $propertyValue, $class)
     {
-        $this->reflection = $this->reflection?  : new \ReflectionObject($class);
+        $this->reflection = $this->reflection?? new \ReflectionObject($class);
         if ($this->reflection->hasProperty($propertyName)) {
             $reflectionProperty = $this->reflection->getProperty($propertyName);
             $reflectionProperty->setAccessible(true);
@@ -48,8 +48,7 @@ abstract class AbstractMapper implements MapperInterface
      */
     public function getPropertyName($property)
     {
-        //$transformerClass = $this->options? $this->options->getPropertyTransformer($property)?? $this->options->getTransformer(): null;
-        $transformerClass = $this->options? ($this->options->getPropertyTransformer($property)? : $this->options->getTransformer()) : null;
+        $transformerClass = $this->options? $this->options->getPropertyTransformer($property)?? $this->options->getTransformer(): null;
         if ($transformerClass instanceof TransformerInterface) {
             $property = $transformerClass->transform($property);
             if (!is_string($property) || trim($property)=== '') {

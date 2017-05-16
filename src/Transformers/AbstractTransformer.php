@@ -15,10 +15,9 @@ abstract class AbstractTransformer implements TransformerInterface
      * @param string $attribute
      * @return string
      */
-    public function transform($attribute)
+    public function transform(string $attribute)
     {
-        $closure = $this->transformer;
-        return $closure($attribute);
+        return ($this->transformer)($attribute);
     }
 
     /**

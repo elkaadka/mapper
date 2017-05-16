@@ -16,7 +16,7 @@ class SnakeCaseTransformer extends AbstractTransformer
     public function __construct()
     {
         // add the transformer closure
-        $this->transformer = function($string) {
+        $this->transformer = function(string $string): string {
             return strtolower(preg_replace('/(?<=\d)(?=[A-Za-z])|(?<=[A-Za-z])(?=\d)|(?<=[a-z])(?=[A-Z])/', '_', str_replace(' ', '', $string)));
         };
     }

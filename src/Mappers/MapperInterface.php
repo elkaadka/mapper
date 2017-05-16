@@ -10,8 +10,8 @@ interface MapperInterface
 {
     public function map($data, $class);
 
-    public function copy($propertyName, $propertyValue, $class);
+    public function copy(string $propertyName, $propertyValue, $class);
 
-    public function isValid($data);
+    public function isValid($data): bool;
 
 }

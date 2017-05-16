@@ -18,7 +18,7 @@ class MapperFactory
      * @return mixed
      * @throws MapperNotFound
      */
-    public static function createInstance($mapperName, Options $options = null)
+    public static function createInstance(string $mapperName, Options $options = null)
     {
         $mapperClass = __NAMESPACE__ . '\\' . ucfirst($mapperName) . 'Mapper';
         if (class_exists($mapperClass)) {

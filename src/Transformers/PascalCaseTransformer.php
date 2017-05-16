@@ -17,7 +17,7 @@ class PascalCaseTransformer extends AbstractTransformer
      */
     public function __construct()
     {
-        $this->transformer = function($string) {
+        $this->transformer = function(string $string): string {
             if (strpos($string, '_') !== false || strpos($string, '-') !== false || strpos($string, ' ') !== false) {
                 return ucfirst(str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', strtolower($string)))));
             } else {

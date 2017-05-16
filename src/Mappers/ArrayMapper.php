@@ -35,7 +35,7 @@ class ArrayMapper extends AbstractMapper
      * @param $data
      * @return bool
      */
-    public function isValid($data)
+    public function isValid($data): bool
     {
         return is_array($data);
     }
